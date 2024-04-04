@@ -1,11 +1,8 @@
 ---
-- name: Create an S3 bucket
-  hosts: localhost
-  # vars:
-  #   S3_Bucket_Name: just4testing
+- hosts: localhost
   tasks:
-    - name: create s3 bucket
-      aws_s3_bucket:
-        name: "{{ S3_Bucket_Name }}"
-        region: us-east-1
-        state: present
+  - name: Create an S3 bucket
+    s3_bucket:
+      name: "{{ S3_Bucket_Name }}"
+      region: us-east-1
+      state: present
